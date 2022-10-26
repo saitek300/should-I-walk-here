@@ -10,7 +10,7 @@ As a user, I want to:
 - Be able to click the random button again to load a different show or movie
 
 ## Api's to use
-We will be using the IMDb api (https://www.omdbapi.com/) as well as a 
+We will be using the Omdb api (https://www.omdbapi.com/) as well as a 
 
 ## Tasks
 - Create landing page for the user that allows them to press a button (css) 
