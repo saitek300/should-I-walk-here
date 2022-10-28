@@ -1,16 +1,40 @@
 var button = document.getElementById('button');
 var randomMovie = document.querySelector('.randomMovie')
+let randomMovieId = []
+const arrayLength = 7
+
+function randomMovieId1(){
+    randomMovieId = []
+    for(let i = 0; i < arrayLength; i++){
+    randomMovieId.push(Math.floor((Math.random()*11)))
+}
+randomMovieId = randomMovieId.join("")
+}
+
 
 function randomTitle (){
-    var url = 'http://www.omdbapi.com/?i=tt3896198&apikey=b1e4d10d'
+    randomMovieId1();
+    var url = 'http://www.omdbapi.com/?i=tt'+randomMovieId+'&apikey=b1e4d10d'
+    console.log(url)
     fetch (url)
     .then(function (response) {
         if (response.ok){
             return response.json()
         }
-        return null
+        else {
+            console.log('trying again')
+            randomMovieId1()
+            randomTitle()
+        }
     })
    .then(function(data){
+    if (data.Response == 'False'){
+        console.log('trying again')
+            randomMovieId1()
+            randomTitle()
+    }
+   else {
+    console.log(data)
     var page = document.createElement('div')
     var title = document.createElement('h1')
     var image = document.createElement('img')
@@ -37,6 +61,7 @@ function randomTitle (){
     page.appendChild(actors)
     page.appendChild(genre)
     randomMovie.appendChild(page)
+   }
    })
 }
 
