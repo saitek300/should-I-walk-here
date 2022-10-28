@@ -16,26 +16,29 @@ function randomTitle (){
     var image = document.createElement('img')
     var rating = document.createElement('p')
     var rated = document.createElement('p')
+    var plot = document.createElement('p')
+    var actors = document.createElement('p')
+    var genre = document.createElement('p')
 
     title.textContent = data.Title
     rating.textContent = data.imdbRating
     rated.textContent = data.Rated
-    console.log(data)
     image.setAttribute('src', data.Poster)
+    plot.textContent = data.Plot
+    actors.textContent = data.Actors
+    genre.textContent = data.Genre
 
-    for(var i = 0; i < data.rating; i++){
-        var rating = document.createElement('p')
-        page.textContent = data.rating[i].rating.name+ ":" + data.rating[i].base_rating
-        rating.appendChild(rating)
-    }
+   
     page.appendChild(title)
     page.appendChild(rated)
     page.appendChild(image)
     page.appendChild(rating)
+    page.appendChild(plot)
+    page.appendChild(actors)
+    page.appendChild(genre)
     randomMovie.appendChild(page)
    })
 }
 
 
 button.addEventListener('click', randomTitle);
-
