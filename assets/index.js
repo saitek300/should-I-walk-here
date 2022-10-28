@@ -44,6 +44,14 @@ function randomTitle (){
     var actors = document.createElement('p')
     var genre = document.createElement('p')
 
+    page.classList.add("content")
+    title.classList.add("movieTitle")
+    image.classList.add("movieImage")
+    rating.classList.add("movieRating")
+    rated.classList.add("movieRated")
+    plot.classList.add("moviePlot")
+    actors.classList.add("movieActors")
+    genre.classList.add("movieGenre")
     title.textContent = data.Title
     rating.textContent = data.imdbRating
     rated.textContent = data.Rated
