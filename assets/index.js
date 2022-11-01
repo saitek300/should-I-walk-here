@@ -19,25 +19,30 @@ randomMovieId = randomMovieId.join("")
 function randomTitle (){
     randomMovieId1();
     var url = 'http://www.omdbapi.com/?i=tt'+randomMovieId+'&apikey=b1e4d10d'
-    console.log(url)
     fetch (url)
     .then(function (response) {
         if (response.ok){
             return response.json()
         }
-        else {
-            console.log('trying again')
-            randomMovieId1()
-            randomTitle()
-        }
     })
    .then(function(data){
     if (data.Response == 'False'){
-        console.log('trying again')
             randomMovieId1()
             randomTitle()
     }
+
+    else if (data.Plot == 'N/A'){
+        randomMovieId1()
+        randomTitle()
+    }
+    else if (data.Poster == 'N/A'){
+        console.log('trying again 3')
+        randomMovieId1()
+        randomTitle()
+    }
+
     //generating elements for API content
+
    else {
     console.log(data)
     var page = document.createElement('div')
