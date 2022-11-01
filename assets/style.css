@@ -1,0 +1,35 @@
+#pageBackground{
+    background-image: url("valeri-randalainen-WkG2r7FVQLw-unsplash.jpg");
+    
+}
+
+#header{
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+}
+
+
+#buttonContainer{
+    display:flex;
+    justify-content: center;
+    
+}
+
+#pageContainer{
+    margin-top: 50px;
+    border-radius: 11px;
+}
+
+.content{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movieImage{
+    border-style: dotted;
+    border-radius: 6px;
+}
