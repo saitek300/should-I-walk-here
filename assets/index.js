@@ -17,7 +17,7 @@ randomMovieId = randomMovieId.join("")
 //fetch for omdb API
 function randomTitle (){
     randomMovieId1();
-    var url = 'http://www.omdbapi.com/?i=tt'+randomMovieId+'&apikey=b1e4d10d'
+    var url = 'https://www.omdbapi.com/?i=tt'+randomMovieId+'&apikey=b1e4d10d'
     var progress = document.createElement('p')
     fetch (url)
     .then(function (response) {
