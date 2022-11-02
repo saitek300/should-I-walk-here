@@ -19,4 +19,7 @@ We will be using the Omdb api (https://www.omdbapi.com/)
 - Create landing page for the user that allows them to press a button (css) 
 - Create a button that loads a random imdb movie or show
 - Create a results page with the random movie or show
-- Create a search bar that Searches for trailers on youtube and displays them
+
+## Live Url
+https://saitek300.github.io/what-should-i-watch-next/
+
