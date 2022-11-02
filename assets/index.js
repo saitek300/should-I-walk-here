@@ -1,5 +1,4 @@
 //global
-
 var button = document.getElementById('button');
 var randomMovie = document.querySelector('.randomMovie')
 let randomMovieId = []
@@ -19,6 +18,7 @@ randomMovieId = randomMovieId.join("")
 function randomTitle (){
     randomMovieId1();
     var url = 'http://www.omdbapi.com/?i=tt'+randomMovieId+'&apikey=b1e4d10d'
+    var progress = document.createElement('p')
     fetch (url)
     .then(function (response) {
         if (response.ok){
@@ -27,16 +27,19 @@ function randomTitle (){
     })
    .then(function(data){
     if (data.Response == 'False'){
+        randomMovie.innerHTML = "Please wait while the movie/show loads"
             randomMovieId1()
             randomTitle()
+            
     }
 
     else if (data.Plot == 'N/A'){
+        randomMovie.innerHTML = "Please wait while the movie/show loads"
         randomMovieId1()
         randomTitle()
     }
     else if (data.Poster == 'N/A'){
-        console.log('trying again 3')
+        randomMovie.innerHTML = "Please wait while the movie/show loads"
         randomMovieId1()
         randomTitle()
     }
@@ -44,7 +47,7 @@ function randomTitle (){
     //generating elements for API content
 
    else {
-    console.log(data)
+    randomMovie.innerHTML = " "
     var page = document.createElement('div')
     var title = document.createElement('h1')
     var image = document.createElement('img')
