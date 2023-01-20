@@ -3,7 +3,8 @@ var button = document.getElementById('button');
 var randomMovie = document.querySelector('.randomMovie')
 let randomMovieId = []
 const arrayLength = 7
-
+let getLastMovie= ()=>document.getElementById("lastWatched").textContent=localStorage.getItem("movieTitle")
+getLastMovie()
 //number generator for imdb ID
 function randomMovieId1() {
     randomMovieId = []
@@ -16,6 +17,7 @@ function randomMovieId1() {
 
 //fetch for omdb API
 function randomTitle() {
+    
     randomMovieId1();
     var url = 'https://www.omdbapi.com/?i=tt' + randomMovieId + '&apikey=b1e4d10d'
     var progress = document.createElement('p')
@@ -87,6 +89,7 @@ function randomTitle() {
                 randomMovie.appendChild(page)
 
                 localStorage.setItem("movieTitle", data.Title);
+                getLastMovie()
 
             }
         })
